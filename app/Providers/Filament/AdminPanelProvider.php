@@ -27,6 +27,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandName('TiketKuy')
             ->font('Poppins')
             ->colors([
                 'primary' => '#F97316',

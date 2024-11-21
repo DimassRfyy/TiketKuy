@@ -102,6 +102,24 @@ class TicketResource extends Resource
                             ->inline(false),
                     ])
                     ->columns(3),
+                Section::make('Contact Person')
+                    ->description('Contact person information about related ticket')
+                    ->icon('heroicon-m-user')
+                    ->schema([
+                        Forms\Components\FileUpload::make('cs_photo')
+                            ->required()
+                            ->image()
+                            ->disk('public')
+                            ->directory('ticket/cs-photos'),
+                        Forms\Components\TextInput::make('cs_name')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('cs_phone')
+                            ->tel()
+                            ->maxLength(255)
+                            ->prefixIcon('heroicon-m-phone'),
+                    ])
+                    ->columns(3),
                 Section::make('Ticket Photo')
                     ->description('Various photos about related ticket')
                     ->icon('heroicon-m-document-text')

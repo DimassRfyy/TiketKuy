@@ -41,10 +41,6 @@ class CityResource extends Resource
                     ->dehydrated()
                     ->unique(City::class, 'slug', ignoreRecord: true)
                     ->prefixIcon('heroicon-m-link'),
-                Forms\Components\TextInput::make('phone')
-                    ->tel()
-                    ->maxLength(255)
-                    ->prefixIcon('heroicon-m-phone'),
                 Forms\Components\FileUpload::make('photo')
                     ->required()
                     ->image()
@@ -61,8 +57,8 @@ class CityResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('phone')
-                    ->searchable(),
+                // Tables\Columns\TextColumn::make('phone')
+                //     ->searchable(),
                 Tables\Columns\ImageColumn::make('photo')
                     ->circular(),
                 Tables\Columns\TextColumn::make('created_at')

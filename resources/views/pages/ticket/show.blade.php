@@ -64,19 +64,19 @@
             </div>
         </section>
         <section id="Management" class="flex flex-col gap-[6px]">
-            <h2 class="font-bold text-sm leading--[21px]">Management</h2>
+            <h2 class="font-bold text-sm leading--[21px]">Contact Service</h2>
             <div class="flex items-center justify-between rounded-3xl p-[10px] pr-[14px] bg-[#F8F8F9]">
                 <div class="flex items-center gap-[14px]">
                     <div class="w-[60px] h-[60px] rounded-[20px] overflow-hidden">
-                        <img src="{{ Storage::url($ticket->city->photo) }}" class="w-full h-full object-cover"
+                        <img src="{{ Storage::url($ticket->cs_photo) }}" class="w-full h-full object-cover"
                             alt="">
                     </div>
                     <div>
-                        <p class="font-bold text-lg leading-[27px]">{{ $ticket->city->name }}</p>
-                        <p class="text-sm leading-[21px]">{{ $ticket->city->phone }}</p>
+                        <p class="font-bold text-lg leading-[27px]">{{ $ticket->cs_name }}</p>
+                        <p class="text-sm leading-[21px]">{{ $ticket->cs_phone }}</p>
                     </div>
                 </div>
-                <a href="tel:{{ str_replace(' ', '', $ticket->city->phone) }}">
+                <a href="tel:{{ str_replace(' ', '', $ticket->cs_phone) }}">
                     <img src="{{ asset('assets/images/icons/call-orange.svg') }}" class="w-10 h-10" alt="">
                 </a>
             </div>
