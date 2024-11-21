@@ -76,7 +76,7 @@ class BookingService
                 $data['payment_proof'] = $validated['payment_proof']->store('booking/payment_proof', 'public');
             }
 
-            $data['code'] = 'TRX' . date('Ymd') . strtoupper(Str::random(5));
+            $data['code'] = 'KUY' . date('Ymd') . strtoupper(Str::random(5));
             $data['name'] = $booking['name'];
             $data['phone'] = $booking['phone'];
             $data['email'] = $booking['email'] ?? null;

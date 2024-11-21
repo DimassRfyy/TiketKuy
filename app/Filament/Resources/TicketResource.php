@@ -26,7 +26,7 @@ class TicketResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-ticket';
 
-    protected static ?string $navigationGroup = 'Transaction';
+    protected static ?string $navigationGroup = 'Ticket Management';
 
     protected static ?int $navigationSort = 1;
 
