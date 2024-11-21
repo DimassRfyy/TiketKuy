@@ -14,7 +14,7 @@ class PopularTicketChart extends ChartWidget
 {
     return 'Top 10 most booked tickets';
 }
-    protected static ?string $maxHeight = '385px';
+    protected static ?string $maxHeight = '275px';
 
     protected function getData(): array
     {
