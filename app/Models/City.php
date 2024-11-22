@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
 
 class City extends Model
 {
@@ -34,5 +35,23 @@ class City extends Model
     public function tickets(): HasMany
     {
         return $this->hasMany(Ticket::class);
+    }
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Hapus gambar saat data city dihapus
+        static::deleting(function ($city) {
+            if ($city->photo && Storage::disk('public')->exists($city->photo)) {
+                Storage::disk('public')->delete($city->photo);
+            }
+        });
+
+        // Hapus gambar lama sebelum diperbarui
+        static::updating(function ($city) {
+            if ($city->isDirty('photo') && $city->getOriginal('photo')) {
+                Storage::disk('public')->delete($city->getOriginal('photo'));
+            }
+        });
     }
 }

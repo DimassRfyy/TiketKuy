@@ -60,8 +60,6 @@ class CategoryResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
                 Tables\Columns\ImageColumn::make('light_icon'),
                 Tables\Columns\ImageColumn::make('dark_icon'),
                 Tables\Columns\TextColumn::make('created_at')

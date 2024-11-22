@@ -55,10 +55,6 @@ class CityResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
-                // Tables\Columns\TextColumn::make('phone')
-                //     ->searchable(),
                 Tables\Columns\ImageColumn::make('photo')
                     ->circular(),
                 Tables\Columns\TextColumn::make('created_at')

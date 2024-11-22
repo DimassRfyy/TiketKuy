@@ -33,7 +33,7 @@ class BookingResource extends Resource
 {
     protected static ?string $model = Booking::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-credit-card';
 
     protected static ?string $navigationGroup = 'Transaction';
 
